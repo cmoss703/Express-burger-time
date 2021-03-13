@@ -1,8 +1,21 @@
-const Express = require('express');
+const express = require('express');
 const burger = require('../models/burger');
 
-const router;
+const router = express.Router();
 
-// Create the `router` for the app, and export the `router` at the end of your file.
+router.get('/', (req, res) => {
+    burger.selectAll((data) => {
+      const hbsObject = {
+        burger: data,
+      };
+        // res.json(data)
+      console.log(hbsObject);
+      res.render('index', hbsObject);
+    });
+  });
+
+  router.post('/api/burgers', (req, res) => {
+      burger.create(['burger_name'], req.body.name, (result) =>)
+  })
 
 module.exports = router;
