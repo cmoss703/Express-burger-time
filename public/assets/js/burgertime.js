@@ -8,11 +8,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const eatBtn = document.getElementById('eat-btn');
 
     addBtn.addEventListener('submit', (e) => {
+        console.log(hi);
         e.preventDefault();
+
 
         const newBurger = {
             burger_name: document.getElementById('berg').value.trim(),
         }
+
+        console.log(newBurger);
 
         fetch('api/burgers', {
             method: 'POST',

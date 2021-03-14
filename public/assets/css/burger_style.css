@@ -1,14 +1,25 @@
 body {
     background-color: rgb(255, 196, 0);
-    /* display: flex;
+    display: flex;
     min-height: 100vh;
-    flex-direction: column; */
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 .nav-wrapper {
     background-color: #f5d389;
 }
-      
+ 
+#top-bun {
+    /* text-align: center; */
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    font-size:x-large;
+}
 
 h1 {
     text-align: center;
@@ -23,13 +34,19 @@ h1 {
 
 .burgers {
     /* text-align: center; */
-    color: yellow;
-    font-weight: bold;
-    margin: 15px 250px;
-    border: 1px solid;
+    color: white;
+    /* font-weight: bold; */
+    margin: 1% 20%;
+    border: 1px solid black;
     border-radius: 20px;
     display: block;
     background-color: rgb(77, 43, 24);
+}
+.burgers label {
+    float: left;
+    color: rgb(55, 216, 77);
+    margin-left: 2%;
+    margin-top: 1%;
 }
 
 .burger-img {
@@ -37,7 +54,7 @@ h1 {
     width: 150px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 1%;
 }
 
 
@@ -54,25 +71,62 @@ h1 {
     border: 1px solid;
 }
 
+.burger-add {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: tomato;
+    display: block;
+    padding: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 25px;
+    border: 1px solid;
+}
+
 .eat-btn {
     border-radius: 30px;
-    background-color: rgb(224, 43, 11);
+    color: black;
+    background-color: rgb(255, 238, 162);
     font-weight: bold;
     float: right;
     margin-right: 20px;
+}
+
+#add-btn {
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(7, 150, 26);
+    /* font-weight: bold; */
+    /* float: left; */
+    text-align: center;
+    display: inline-block;
+    /* border-radius: 70%; */
+    padding: 10px;
+    margin-top: 2%;
+    /* margin-right: 10%; */
 }
 
 .burger-text {
     margin-left: 50px;
 }
 
+/* .add-burger {
+    background-color: tomato;
+    display: block;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
 a {
-    color: rgb(224, 43, 11);
+    color: rgb(7, 150, 26);
     font-weight: bold;
+    text-decoration: underline;
 }
 
 #footer {
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     bottom: 0;
     width: 100%;
@@ -80,6 +134,14 @@ a {
     background-color: #f5d389;
     padding-top: 10px;
     font-weight: bold;
-    /* color: rgb(0, 0, 0); */
-    /* text-align: center; */
-  }
+    box-shadow: 0px 0px 3px 0px
+}
+
+/* #page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
+} */
