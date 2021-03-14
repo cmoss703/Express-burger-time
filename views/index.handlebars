@@ -6,25 +6,24 @@
      <img class="burger-img" src="/assets/img/burger-img.png" alt="burger image">
      <h1>It's Burger Time!</h1>
      <div class="row">
-          <div class="col m6 s12">
-               <h3>Ready for Consumption:</h3>
+          <div class="col m6 s12 burger-div">
+               <h3 class="burger-status">READY FOR CONSUMPTION</h3>
 
                <div id="ready" class="">
                     {{#each burgers}}
                     {{#unless devoured}}
                     <div class="burgers">
-                         <a href="#!" class="">
+                         <p href="#!" class="burger-text">
                               {{burger_name}}
-                         </a>
-                         <button class="eat-btn right-align" data-id="{{id}}" data-devoured="{{devoured}}">Eat This
-                              Burger!</button>
+                         <button class="eat-btn" data-id="{{id}}" data-devoured="{{devoured}}">Eat it!</button>
+                         </p>
                     </div>
                     {{/unless}}
                     {{/each}}
                </div>
           </div>
           <div class="col m6 s12">
-               <h3>Devoured!</h3>
+               <h3 class="burger-status">DEVOURED</h3>
 
                <div id="devoured" class="">
                     {{#each burgers}}
