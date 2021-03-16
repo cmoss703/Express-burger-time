@@ -9,32 +9,34 @@
           <div class="col m6 s12 burger-div">
                <h3 class="burger-status">READY FOR CONSUMPTION</h3>
 
-               <div id="ready" class="">
+               <ul id="ready" class="">
                     {{#each burgers}}
                     {{#unless devoured}}
                     <div class="burgers">
-                         <p href="#!" class="burger-text">
+                         <li href="#!" class="burger-text">
                               {{burger_name}}
-                              <button class="eat-btn" data-id="{{this.id}}" data-devoured="{{devoured}}">Eat it!</button>
-                         </p>
+                              <button class="eat-btn" data-id="{{id}}" data-devoured="{{devoured}}">Eat it!</button>
+                         </li>
                     </div>
                     {{/unless}}
                     {{/each}}
-               </div>
+               </ul>
           </div>
           <div class="col m6 s12">
                <h3 class="burger-status">DEVOURED</h3>
 
-               <div id="devoured" class="">
+               <ul id="devoured" class="">
                     {{#each burgers}}
                     {{#if devoured}}
-                    <p href="#!" class="burger-text">
-                         {{burger_name}}
-                    </p>
+                    <div class="burgers">
+                         <li href="#!" class="burger-text">
+                              {{burger_name}}
+                         </li>
+                    </div>
 
                     {{/if}}
                     {{/each}}
-               </div>
+               </ul>
           </div>
      </div>
      <div class="row">

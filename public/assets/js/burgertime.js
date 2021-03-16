@@ -41,11 +41,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 console.log('eat test');
 
                 const id = e.target.getAttribute('data-id');
-                const eaten = e.target.getAttribute('data-devoured');
+                // const newEat = e.target.getAttribute('data-devoured');
+
+                console.log("id: " + id);
 
                 const devouredState = {
-                    devoured: eaten,
+                    devoured: true,
                 }
+                
+                console.log(devouredState);
 
                 fetch(`/api/burgers/${id}`, {
                     method: 'PUT',
@@ -54,11 +58,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         'Content-Type': 'application-json',
                     },
 
+                    // body: devouredState,
                     body: JSON.stringify(devouredState),
                 }).then((response) => {
 
+                    console.log(e.target)
+
                     if (response.ok) {
-                        console.log(`changed devoured state to: ${eaten}`);
+                        console.log(`changed devoured state to: true`);
                         location.reload('/');
 
                     } else {

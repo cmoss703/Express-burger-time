@@ -66,6 +66,8 @@ const orm = {
     // ${cols} = ${vals} WHERE ${condition}`;
 
     console.log(queryString);
+    console.log("123");
+    
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;

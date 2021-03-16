@@ -41,6 +41,7 @@ h1 {
     border-radius: 20px;
     display: block;
     background-color: rgb(77, 43, 24);
+    padding: 1%
 }
 .burgers label {
     float: left;
