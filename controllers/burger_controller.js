@@ -20,7 +20,7 @@ router.post('/api/burgers', (req, res) => {
   });
 });
 
-router.put('api/burgers/:id', (req, res) => {
+router.put('/api/burgers/:id', (req, res) => {
 
   console.log("the id is " + req.params.id)
 
@@ -30,7 +30,7 @@ router.put('api/burgers/:id', (req, res) => {
 
   burger.updateOne(
     {
-      devoured: req.body.devoured,
+      devoured: true,
     },
     condition,
     (result) => {
