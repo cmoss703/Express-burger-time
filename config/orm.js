@@ -21,11 +21,11 @@ const objToSql = (ob) => {
   return arr.toString();
 };
 
-const table = "burgers"
+// const table = "burgers"
 
 const orm = {
-  selectAll(cb) {
-    const queryString = `SELECT * FROM burgers;`;
+  selectAll(table, cb) {
+    const queryString = `SELECT * FROM ${table};`;
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
@@ -34,8 +34,8 @@ const orm = {
     });
   },
 
-  insertOne(cols, vals, cb) {
-    let queryString = `INSERT INTO burgers (${cols}) VALUE ('${vals}')`;
+  insertOne(table, cols, vals, cb) {
+    let queryString = `INSERT INTO ${table} (${cols}) VALUE ('${vals}')`;
 
     console.log(queryString);
 
@@ -48,8 +48,8 @@ const orm = {
     });
   },
 
-  updateOne(objColVals, condition, cb) {
-    let queryString = `UPDATE burgers SET `;
+  updateOne(table, objColVals, condition, cb) {
+    let queryString = `UPDATE ${table} SET `;
     
     queryString += objToSql(objColVals);
     queryString += ` WHERE ${condition}`;
