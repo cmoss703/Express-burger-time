@@ -8,11 +8,33 @@ const connection = require('./connection');
 // * `insertOne()`
 // * `updateOne()`
 
+const objToSql = (ob) => {
+  const arr = [];
+
+  // loop through the keys and push the key/value as a string int arr
+  for (const key in ob) {
+    let value = ob[key];
+    // check to skip hidden properties
+    if (Object.hasOwnProperty.call(ob, key)) {
+      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+      if (typeof value === 'string' && value.indexOf(' ') >= 0) {
+        value = `'${value}'`;
+      }
+      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
+      // e.g. {sleepy: true} => ["sleepy=true"]
+      arr.push(`${key}=${value}`);
+    }
+  }
+
+  // translate array of strings to a single comma-separated string
+  return arr.toString();
+};
+
 const table = "burgers"
 
 const orm = {
   selectAll(cb) {
-    const queryString = `SELECT * FROM ${table};`;
+    const queryString = `SELECT * FROM burgers;`;
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
@@ -22,7 +44,7 @@ const orm = {
   },
 
   insertOne(cols, vals, cb) {
-    let queryString = `INSERT INTO ${table} (${cols}) VALUE (${vals})`;
+    let queryString = `INSERT INTO burgers (${cols}) VALUE ('${vals}')`;
 
     console.log(queryString);
 
@@ -35,8 +57,13 @@ const orm = {
     });
   },
 
-  updateOne(cols, vals, id, cb) {
-    let queryString = `UPDATE ${table} SET ${cols} = ${vals} WHERE id = ${id}`;
+  updateOne(objColVals, condition, cb) {
+    let queryString = `UPDATE burgers SET`;
+    
+    queryString += objToSql(objColVals);
+    queryString += `WHERE ${condition}`;
+
+    // ${cols} = ${vals} WHERE ${condition}`;
 
     console.log(queryString);
     connection.query(queryString, (err, result) => {

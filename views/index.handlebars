@@ -15,7 +15,7 @@
                     <div class="burgers">
                          <p href="#!" class="burger-text">
                               {{burger_name}}
-                              <button class="eat-btn" data-id="{{id}}" data-devoured="{{devoured}}">Eat it!</button>
+                              <button class="eat-btn" data-id="{{this.id}}" data-devoured="{{devoured}}">Eat it!</button>
                          </p>
                     </div>
                     {{/unless}}
@@ -28,9 +28,9 @@
                <div id="devoured" class="">
                     {{#each burgers}}
                     {{#if devoured}}
-                    <a href="#!" class="">
+                    <p href="#!" class="burger-text">
                          {{burger_name}}
-                    </a>
+                    </p>
 
                     {{/if}}
                     {{/each}}

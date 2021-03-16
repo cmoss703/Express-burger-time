@@ -62,7 +62,7 @@ h1 {
     text-align: center;
     font-size: xx-large;
     font-weight: bold;
-    background-color: rgb(55, 216, 77);
+    background-color: tomato;
     display: block;
     padding: 10px;
     margin-left: 100px;
@@ -75,7 +75,7 @@ h1 {
     text-align: center;
     font-size: xx-large;
     font-weight: bold;
-    background-color: tomato;
+    background-color: rgb(55, 216, 77);
     display: block;
     padding: 10px;
     margin-left: 100px;

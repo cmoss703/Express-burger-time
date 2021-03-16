@@ -9,7 +9,7 @@ const burger = {
         orm.insertOne(cols, vals, (res) => cb(res));
     },
     updateOne(objColVals, condition, cb) {
-        orm.updateOne(cols, vals, id, (res) => cb(res));
+        orm.updateOne(objColVals, condition, (res) => cb(res));
     },
     // delete(condition, cb) {
     //     orm.delete('burgers', condition, (res) => cb(res));
