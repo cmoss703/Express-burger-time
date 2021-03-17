@@ -23,11 +23,13 @@ Your project is ready for use!
 
 ## USAGE
 
-This application is invoked by entering 'node index.js' into the terminal. Then navigating to the localhost server specified in the app (Port 8080).
+This application is invoked by entering 'node index.js' into the terminal. Then navigating to the localhost server specified in the app (Port 8989).
 
 Alternatively, you can just click [this link, to be brought to the deployed Heroku app.](https://cmoss-burger-time.herokuapp.com/)
 
 ![Deployed App](/public/assets/img/burger-time.png)
+
+In this app, you will be able to add burgers to the "Ready for Consumption" column, and when you're ready to eat them, just click "Eat It!". This will move the burger into the devoured column!
 
 ## CREDITS
 
